@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonLeagueCardContainer = styled.button`
+export const ButtonTeamCardContainer = styled.button`
   background: transparent;
   border: 4px solid transparent;
   display: flex;
@@ -31,7 +31,7 @@ export const ButtonLeagueCardContainer = styled.button`
   }
 `;
 
-export const LeagueCardContainer = styled.div`
+export const TeamCardContainer = styled.div`
   background: transparent;
   border: 4px solid transparent;
   display: flex;

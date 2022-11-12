@@ -1,16 +1,26 @@
 import { League } from '../../@types/League';
 
-import { LeagueCardContainer } from './styles';
+import { ButtonLeagueCardContainer, LeagueCardContainer } from './styles';
 
 interface LeagueCardProps {
   league: League;
+  setLeague?: (league: League) => void;
 }
 
-export function LeagueCard({ league }: LeagueCardProps) {
+export function LeagueCard({ league, setLeague }: LeagueCardProps) {
+  if (setLeague === undefined) {
+    return (
+      <LeagueCardContainer>
+        <img src={league.logo} alt={league.name} />
+        <span>{league.name}</span>
+      </LeagueCardContainer>
+    );
+  }
+
   return (
-    <LeagueCardContainer>
+    <ButtonLeagueCardContainer onClick={() => setLeague(league)}>
       <img src={league.logo} alt={league.name} />
       <span>{league.name}</span>
-    </LeagueCardContainer>
+    </ButtonLeagueCardContainer>
   );
 }

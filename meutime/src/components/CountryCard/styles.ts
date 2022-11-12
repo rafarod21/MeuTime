@@ -7,7 +7,7 @@ export const ButtonCountryCardContainer = styled.button`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   padding: 0.5rem;
 
   border-radius: 6px;
@@ -18,7 +18,7 @@ export const ButtonCountryCardContainer = styled.button`
   transition: transform 0.2s;
 
   &:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
 
   &:active {
@@ -38,7 +38,7 @@ export const CountryCardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   padding: 0.5rem;
 
   border-radius: 6px;
