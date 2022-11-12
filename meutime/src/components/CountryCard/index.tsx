@@ -1,19 +1,26 @@
-import { CountryCardContainer } from './styles';
+import { Country } from '../../@types/Country';
+
+import { ButtonCountryCardContainer, CountryCardContainer } from './styles';
 
 interface CountryCardProps {
-  countryCode: string;
+  country: Country;
+  setCountry?: (country: Country) => void;
 }
 
-export function CountryCard({ countryCode }: CountryCardProps) {
-  const countryName = new Intl.DisplayNames(['pt-BR'], { type: 'region' }).of(
-    countryCode
-  );
-  const countryFlag = `https://media.api-sports.io/flags/${countryCode.toLowerCase()}.svg`;
+export function CountryCard({ country, setCountry }: CountryCardProps) {
+  if (setCountry === undefined) {
+    return (
+      <CountryCardContainer>
+        <img src={country.flag} alt={country.brazilianName} />
+        <span>{country.brazilianName}</span>
+      </CountryCardContainer>
+    );
+  }
 
   return (
-    <CountryCardContainer>
-      <img src={countryFlag} alt={countryName} />
-      <span>{countryName}</span>
-    </CountryCardContainer>
+    <ButtonCountryCardContainer onClick={() => setCountry(country)}>
+      <img src={country.flag} alt={country.brazilianName} />
+      <span>{country.brazilianName}</span>
+    </ButtonCountryCardContainer>
   );
 }

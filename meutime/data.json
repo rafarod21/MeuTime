@@ -1,0 +1,27 @@
+{
+  "countries": [
+    {
+      "name": "England",
+      "code": "GB",
+      "flag": "https://media.api-sports.io/flags/gb.svg"
+    },
+    {
+      "name": "Brazil",
+      "code": "BR",
+      "flag": "https://media.api-sports.io/flags/br.svg"
+    },
+    {
+      "name": "Argentina",
+      "code": "AR",
+      "flag": "https://media.api-sports.io/flags/ar.svg"
+    },
+    {
+      "name": "United States",
+      "code": "US",
+      "flag": "https://media.api-sports.io/flags/us.svg"
+    }
+  ],
+  "leagues": [],
+  "seasons": [],
+  "teams": []
+}
