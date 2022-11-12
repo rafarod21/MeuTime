@@ -1,10 +1,9 @@
-export function Login() {
-  const regionNames = new Intl.DisplayNames(['pt-BR'], { type: 'region' });
+import { LoginContainer } from './styles';
 
+export function Login() {
   return (
-    <div>
+    <LoginContainer>
       <h1>Login</h1>
-      <h3>{regionNames.of('AR')}</h3>
-    </div>
+    </LoginContainer>
   );
 }
