@@ -8,12 +8,15 @@ import { FootballContext } from '../../contexts/FootballContext';
 import { HomeContainer } from './styles';
 
 export function Home() {
-  const { country, league, team, season } = useContext(FootballContext);
+  const { choicePhase } = useContext(FootballContext);
 
   return (
     <HomeContainer>
       <Header />
-      <ChooseCountry />
+      {choicePhase === 'country' && <ChooseCountry />}
+      {choicePhase === 'league' && <ChooseCountry />}
+      {choicePhase === 'team' && <ChooseCountry />}
+      {choicePhase === 'season' && <ChooseCountry />}
     </HomeContainer>
   );
 }

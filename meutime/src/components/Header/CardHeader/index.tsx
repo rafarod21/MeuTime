@@ -8,20 +8,16 @@ import { CardHeaderContainer, ButtonCard } from './styles';
 
 interface CardHeaderProps {
   type: 'country' | 'league' | 'team' | 'season';
-  choicePhase: 'country' | 'league' | 'team' | 'season';
-  changeChoisePhase: (phase: 'country' | 'league' | 'team' | 'season') => void;
 }
 
-export function CardHeader({
-  type,
-  choicePhase,
-  changeChoisePhase,
-}: CardHeaderProps) {
+export function CardHeader({ type }: CardHeaderProps) {
   const {
+    choicePhase,
     country,
     league,
     team,
     season,
+    handleChoicePhase,
     setCountry,
     setLeague,
     setTeam,
@@ -38,7 +34,7 @@ export function CardHeader({
               <span>Escolha um país</span>
             </ButtonCard>
           ) : (
-            <ButtonCard onClick={() => changeChoisePhase('country')}>
+            <ButtonCard onClick={() => handleChoicePhase('country')}>
               <div>
                 <img src={country.flag} alt={country.name} />
               </div>
@@ -59,7 +55,7 @@ export function CardHeader({
             </ButtonCard>
           ) : (
             <ButtonCard
-              onClick={() => changeChoisePhase('league')}
+              onClick={() => handleChoicePhase('league')}
               disabled={choicePhase === 'country'}
             >
               <div>
@@ -83,7 +79,7 @@ export function CardHeader({
             </ButtonCard>
           ) : (
             <ButtonCard
-              onClick={() => changeChoisePhase('team')}
+              onClick={() => handleChoicePhase('team')}
               disabled={choicePhase === 'country' || choicePhase === 'league'}
             >
               <div>
@@ -108,7 +104,7 @@ export function CardHeader({
             </ButtonCard>
           ) : (
             <ButtonCard
-              onClick={() => changeChoisePhase('season')}
+              onClick={() => handleChoicePhase('season')}
               disabled={
                 choicePhase === 'country' ||
                 choicePhase === 'league' ||

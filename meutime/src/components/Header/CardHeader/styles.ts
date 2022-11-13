@@ -11,7 +11,6 @@ export const CardHeaderContainer = styled.div`
 export const ButtonCard = styled.button`
   height: 100%;
   background: transparent;
-  border: 4px solid transparent;
   display: flex;
   flex-direction: column;
   align-items: center;

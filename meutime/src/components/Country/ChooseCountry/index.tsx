@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import { MagnifyingGlass } from 'phosphor-react';
 
+import { Search } from '../../Search';
 import { CountryCard } from '../CountryCard';
 
 import { Country } from '../../../@types/Country';
@@ -8,7 +8,7 @@ import { translateCountryName } from '../../../utils/translateCountryName';
 
 import { FootballContext } from '../../../contexts/FootballContext';
 
-import { CountriesWrapper, ChooseCountryContainer, Search } from './styles';
+import { CountriesWrapper, ChooseCountryContainer } from './styles';
 
 import dataFake from '../../../../data.json';
 
@@ -27,48 +27,22 @@ export function ChooseCountry() {
         )
       : [];
 
-  function handleSetCountry(country: Country) {
-    setSearchCountry(translateCountryName(country.code) || '');
-    setCountry(country);
-    setShowListCountries(false);
-  }
-
-  function handleOnFocus() {
-    setShowListCountries(true);
-  }
-
-  function handleOnBlur() {
-    setShowListCountries(false);
-  }
-
   useEffect(() => {
     setCountries(dataFake.countries);
+    setShowListCountries(true);
   }, []);
 
   return (
     <ChooseCountryContainer>
-      <Search>
-        <input
-          type='text'
-          placeholder='Escolha um país...'
-          value={searchCountry}
-          onChange={(event) => setSearchCountry(event.target.value)}
-          autoComplete='off'
-        />
-        <MagnifyingGlass size={32} />
-      </Search>
+      <Search value={searchCountry} onChange={setSearchCountry} />
       {showListCountries && (
         <CountriesWrapper>
           {searchCountry.length > 0
             ? filteredCountries.map((country) => (
-                <div key={country.name}>
-                  <CountryCard country={country} />
-                </div>
+                <CountryCard key={country.name} country={country} />
               ))
             : countries.map((country) => (
-                <div key={country.name}>
-                  <CountryCard country={country} />
-                </div>
+                <CountryCard key={country.name} country={country} />
               ))}
         </CountriesWrapper>
       )}

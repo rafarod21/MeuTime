@@ -3,8 +3,7 @@ import { useContext } from 'react';
 import { Country } from '../../../@types/Country';
 
 import { FootballContext } from '../../../contexts/FootballContext';
-
-import { DefaultCardList } from '../../DefaultCardList';
+import { translateCountryName } from '../../../utils/translateCountryName';
 
 import { ButtonCountryCardContainer } from './styles';
 
@@ -13,11 +12,19 @@ interface CountryCardProps {
 }
 
 export function CountryCard({ country }: CountryCardProps) {
-  const { setCountry } = useContext(FootballContext);
+  const { setCountry, handleChoicePhase } = useContext(FootballContext);
+
+  function handleChooseCountry(country: Country) {
+    setCountry(country);
+    handleChoicePhase('league');
+  }
 
   return (
-    <ButtonCountryCardContainer onClick={() => setCountry(country)}>
-      {/* <DefaultCardList name={country.brazilianName} image={country.flag} /> */}
+    <ButtonCountryCardContainer onClick={() => handleChooseCountry(country)}>
+      <div>
+        <img src={country.flag} alt={country.name} />
+      </div>
+      <strong>{translateCountryName(country.code)}</strong>
     </ButtonCountryCardContainer>
   );
 }
