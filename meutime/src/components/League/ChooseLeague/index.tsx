@@ -37,10 +37,10 @@ export function ChooseLeague() {
       <LeaguesWrapper>
         {searchLeague.length > 0
           ? filteredCountries.map((league) => (
-              <LeagueCard key={league.name} league={league} />
+              <LeagueCard key={league.id} league={league} />
             ))
           : leagues.map((league) => (
-              <LeagueCard key={league.name} league={league} />
+              <LeagueCard key={league.id} league={league} />
             ))}
       </LeaguesWrapper>
     </ChooseLeagueContainer>

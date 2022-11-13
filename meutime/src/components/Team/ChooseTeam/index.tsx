@@ -37,9 +37,9 @@ export function ChooseTeam() {
       <TeamsWrapper>
         {searchTeam.length > 0
           ? filteredCountries.map((team) => (
-              <TeamCard key={team.name} team={team} />
+              <TeamCard key={team.id} team={team} />
             ))
-          : teams.map((team) => <TeamCard key={team.name} team={team} />)}
+          : teams.map((team) => <TeamCard key={team.id} team={team} />)}
       </TeamsWrapper>
     </ChooseTeamContainer>
   );

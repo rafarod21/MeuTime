@@ -4,11 +4,6 @@ export interface Player {
   firstname: string;
   lastname: string;
   age: number;
-  birth: {
-    date: string;
-    place: string;
-    country: string;
-  };
   nationality: string;
   height: string;
   weight: string;

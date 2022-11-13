@@ -4,7 +4,7 @@ import { Search } from '../../Search';
 import { CountryCard } from '../CountryCard';
 
 import { Country } from '../../../@types/Country';
-import { translateCountryName } from '../../../utils/translateCountryName';
+import { translateCountryNameForCode } from '../../../utils/translateCountryName';
 
 import { CountriesWrapper, ChooseCountryContainer } from './styles';
 
@@ -17,7 +17,7 @@ export function ChooseCountry() {
   const filteredCountries =
     searchCountry.length > 0
       ? countries.filter((country) =>
-          translateCountryName(country.code)
+          translateCountryNameForCode(country.code)
             ?.toLocaleLowerCase()
             .includes(searchCountry.toLocaleLowerCase())
         )

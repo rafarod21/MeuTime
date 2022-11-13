@@ -23,25 +23,25 @@
   ],
   "leagues": [
     {
-      "id": 39,
+      "id": 391,
       "name": "Premier League 1",
       "type": "League",
       "logo": "https://media.api-sports.io/football/leagues/2.png"
     },
     {
-      "id": 39,
+      "id": 392,
       "name": "Premier League 2",
       "type": "League",
       "logo": "https://media.api-sports.io/football/leagues/2.png"
     },
     {
-      "id": 39,
+      "id": 393,
       "name": "Premier League 3",
       "type": "League",
       "logo": "https://media.api-sports.io/football/leagues/2.png"
     },
     {
-      "id": 39,
+      "id": 394,
       "name": "Premier League 4",
       "type": "League",
       "logo": "https://media.api-sports.io/football/leagues/2.png"
@@ -53,8 +53,8 @@
   ],
   "teams": [
     {
-      "id": 33,
-      "name": "Manchester United 1",
+      "id": 331,
+      "name": "Manchester United",
       "code": "MUN",
       "country": "England",
       "founded": 1878,
@@ -62,8 +62,8 @@
       "logo": "https://media.api-sports.io/football/teams/33.png"
     },
     {
-      "id": 33,
-      "name": "Manchester United 2",
+      "id": 332,
+      "name": "Manchester United",
       "code": "MUN",
       "country": "England",
       "founded": 1878,
@@ -71,8 +71,8 @@
       "logo": "https://media.api-sports.io/football/teams/33.png"
     },
     {
-      "id": 33,
-      "name": "Manchester United 3",
+      "id": 333,
+      "name": "Manchester United",
       "code": "MUN",
       "country": "England",
       "founded": 1878,
@@ -80,13 +80,176 @@
       "logo": "https://media.api-sports.io/football/teams/33.png"
     },
     {
-      "id": 33,
-      "name": "Manchester United 4",
+      "id": 334,
+      "name": "Manchester United",
       "code": "MUN",
       "country": "England",
       "founded": 1878,
       "national": false,
       "logo": "https://media.api-sports.io/football/teams/33.png"
+    }
+  ],
+  "players": [
+    {
+      "id": 2761,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    },
+    {
+      "id": 2762,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    },
+    {
+      "id": 2763,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    },
+    {
+      "id": 2764,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    },
+    {
+      "id": 2765,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    },
+    {
+      "id": 2766,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    },
+    {
+      "id": 2767,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    },
+    {
+      "id": 2768,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    },
+    {
+      "id": 2769,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    },
+    {
+      "id": 27610,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    },
+    {
+      "id": 27611,
+      "name": "Neymar",
+      "firstname": "Neymar",
+      "lastname": "da Silva Santos Júnior",
+      "age": 28,
+      "birth": {},
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276.png"
+    }
+  ],
+  "lineups": [
+    {
+      "formation": "4-2-3-1",
+      "played": 32
+    },
+    {
+      "formation": "3-4-1-2",
+      "played": 4
+    },
+    {
+      "formation": "3-4-2-1",
+      "played": 1
+    },
+    {
+      "formation": "4-3-1-2",
+      "played": 1
     }
   ]
 }

@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Country } from '../../../@types/Country';
 
 import { FootballContext } from '../../../contexts/FootballContext';
-import { translateCountryName } from '../../../utils/translateCountryName';
+import { translateCountryNameForCode } from '../../../utils/translateCountryName';
 
 import { ButtonCountryCardContainer } from './styles';
 
@@ -24,7 +24,7 @@ export function CountryCard({ country }: CountryCardProps) {
       <div>
         <img src={country.flag} alt={country.name} />
       </div>
-      <strong>{translateCountryName(country.code)}</strong>
+      <strong>{translateCountryNameForCode(country.code)}</strong>
     </ButtonCountryCardContainer>
   );
 }
