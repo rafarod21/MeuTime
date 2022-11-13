@@ -5,14 +5,15 @@ import { SearchContainer } from './styles';
 interface SearchProps {
   value: string;
   onChange: (value: string) => void;
+  placeholder: string;
 }
 
-export function Search({ value, onChange }: SearchProps) {
+export function Search({ value, onChange, placeholder }: SearchProps) {
   return (
     <SearchContainer>
       <input
         type='text'
-        placeholder='Escolha um país...'
+        placeholder={placeholder}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         autoComplete='off'

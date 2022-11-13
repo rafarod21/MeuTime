@@ -6,7 +6,7 @@ import { Team } from '../@types/Team';
 
 import dataFake from '../../data.json';
 
-type Phase = 'country' | 'league' | 'team' | 'season';
+type Phase = 'country' | 'league' | 'team' | 'season' | 'finish';
 
 export interface FootballContextDataProps {
   choicePhase: Phase;
@@ -61,6 +61,9 @@ export function FootballContextProvider({ children }: FootballProviderProps) {
       case 'season':
         setChoicePhase('season');
         setSeason(null);
+        return;
+      case 'finish':
+        setChoicePhase('finish');
         return;
       default:
         return;
