@@ -11,11 +11,13 @@ type Phase = 'country' | 'league' | 'team' | 'season' | 'finish';
 export interface FootballContextDataProps {
   choicePhase: Phase;
   country: Country | null;
+  listCountries: Country[] | null;
   league: League | null;
   team: Team | null;
   season: number | null;
   handleChoicePhase: (phase: Phase) => void;
   setCountry: (country: Country | null) => void;
+  setListCountries: (countries: Country[] | null) => void;
   setLeague: (league: League | null) => void;
   setTeam: (team: Team | null) => void;
   setSeason: (season: number | null) => void;
@@ -30,6 +32,7 @@ export const FootballContext = createContext({} as FootballContextDataProps);
 export function FootballContextProvider({ children }: FootballProviderProps) {
   const [choicePhase, setChoicePhase] = useState<Phase>('country');
   const [country, setCountry] = useState<Country | null>(null);
+  const [listCountries, setListCountries] = useState<Country[] | null>(null);
   const [league, setLeague] = useState<League | null>(null);
   const [team, setTeam] = useState<Team | null>(null);
   const [season, setSeason] = useState<number | null>(null);
@@ -71,11 +74,13 @@ export function FootballContextProvider({ children }: FootballProviderProps) {
       value={{
         choicePhase,
         country,
+        listCountries,
         league,
         team,
         season,
         handleChoicePhase,
         setCountry,
+        setListCountries,
         setLeague,
         setTeam,
         setSeason,

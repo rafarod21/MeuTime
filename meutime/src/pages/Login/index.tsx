@@ -1,18 +1,84 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { redirect, useLocation, useNavigate } from 'react-router-dom';
+import { ClipLoader } from 'react-spinners';
 
 import logoImg from '../../assets/logo.svg';
+import { FootballContext } from '../../contexts/FootballContext';
+
+import { apiFootball } from '../../lib/apiFootball';
+
+import { getCountriesApiFootBall } from '../../utils/getCountriesApiFootBall';
 
 import { ButtonLogin, InputKeyApiFootball, LoginContainer } from './styles';
 
 export function Login() {
-  const [keyApi, setKeyApi] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
 
-  function handleLogin() {
-    if (keyApi.length < 5) {
-      alert('Insita uma key válida!');
-      return;
+  const { listCountries, setListCountries } = useContext(FootballContext);
+  const [isLoading, setIsLoading] = useState(false);
+  const [inputKeyApi, setInputKeyApi] = useState('');
+
+  async function handleValidateKey(key: string) {
+    const countries = await getCountriesApiFootBall();
+
+    if ('message' in countries) {
+      alert('Erro de servidor. Tente mais tarde');
+    } else {
+      if (countries.response.length === 0) {
+        alert('Insira uma key válida!');
+      } else {
+        setListCountries(countries.response);
+
+        // SALVAR KEY EM SESSIONSTORE
+        window.sessionStorage.setItem('@meutime:key', key);
+
+        return true;
+      }
     }
+
+    return false;
   }
+
+  async function handleLogin() {
+    setIsLoading(true);
+
+    if (inputKeyApi.trim().length < 3) {
+      alert('Insira uma key válida!');
+    } else {
+      apiFootball.defaults.headers.common['x-rapidapi-key'] =
+        inputKeyApi.trim();
+      const isKeyValid = await handleValidateKey(inputKeyApi.trim());
+
+      if (isKeyValid) {
+        alert('Direto pro gol!!');
+        navigate(from, { replace: true });
+      }
+    }
+
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
+    const keyApiFootball = window.sessionStorage.getItem('@meutime:key');
+
+    async function validateKey(key: string) {
+      const isKeyValid = await handleValidateKey(key);
+
+      if (isKeyValid) {
+        alert('Direto pro gol!!');
+        navigate(from, { replace: true });
+      }
+    }
+
+    if (keyApiFootball) {
+      apiFootball.defaults.headers.common['x-rapidapi-key'] = keyApiFootball;
+      if (listCountries === null) {
+        validateKey(keyApiFootball);
+      }
+    }
+  }, []);
 
   return (
     <LoginContainer>
@@ -20,11 +86,13 @@ export function Login() {
 
       <InputKeyApiFootball
         placeholder='Insira a key da API-Football'
-        value={keyApi}
-        onChange={(event) => setKeyApi(event.target.value)}
+        value={inputKeyApi}
+        onChange={(event) => setInputKeyApi(event.target.value)}
       />
 
-      <ButtonLogin onClick={handleLogin}>BORA JOGAR!</ButtonLogin>
+      <ButtonLogin onClick={handleLogin} disabled={isLoading}>
+        {!isLoading ? 'BORA JOGAR!' : <ClipLoader color='#FED100' />}
+      </ButtonLogin>
     </LoginContainer>
   );
 }

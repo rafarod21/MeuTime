@@ -23,6 +23,7 @@ export const InputKeyApiFootball = styled.input`
 
 export const ButtonLogin = styled.button`
   width: 20rem;
+  height: 4rem;
   background: ${(props) => props.theme['blue-500']};
 
   display: flex;
@@ -37,7 +38,14 @@ export const ButtonLogin = styled.button`
 
   transition: background-color 0.2s;
 
-  &:hover {
-    background: ${(props) => props.theme['blue-600']};
+  &:not(:disabled) {
+    &:hover {
+      background: ${(props) => props.theme['blue-600']};
+    }
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
   }
 `;
