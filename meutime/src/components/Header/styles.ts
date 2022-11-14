@@ -17,10 +17,10 @@ export const ShowChoices = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
-  height: auto;
+  height: 10rem;
 
-  @media (min-width: 1000px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media (min-width: 700px) {
+    height: 13rem;
   }
 
   > div {

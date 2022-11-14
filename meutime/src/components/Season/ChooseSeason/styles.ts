@@ -11,8 +11,9 @@ export const ChooseSeasonContainer = styled.section`
 
 export const SeasonsWrapper = styled.div`
   margin-top: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
   gap: 1rem;
 `;

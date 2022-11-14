@@ -42,6 +42,20 @@ export function ChooseCountry() {
           : countries.map((country) => (
               <CountryCard key={country.name} country={country} />
             ))}
+        {searchCountry.length > 0
+          ? filteredCountries.map((country) => (
+              <CountryCard key={country.name} country={country} />
+            ))
+          : countries.map((country) => (
+              <CountryCard key={country.name} country={country} />
+            ))}
+        {searchCountry.length > 0
+          ? filteredCountries.map((country) => (
+              <CountryCard key={country.name} country={country} />
+            ))
+          : countries.map((country) => (
+              <CountryCard key={country.name} country={country} />
+            ))}
       </CountriesWrapper>
     </ChooseCountryContainer>
   );

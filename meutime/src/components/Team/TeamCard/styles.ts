@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const ButtonTeamCardContainer = styled.button`
+  width: 5rem;
+  height: 10rem;
   background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
 
   border-radius: 6px;
@@ -21,6 +22,10 @@ export const ButtonTeamCardContainer = styled.button`
 
   &:active {
     transform: scale(1);
+  }
+
+  @media (min-width: 768px) {
+    width: 9rem;
   }
 
   span {

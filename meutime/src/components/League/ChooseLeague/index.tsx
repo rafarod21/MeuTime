@@ -42,6 +42,20 @@ export function ChooseLeague() {
           : leagues.map((league) => (
               <LeagueCard key={league.id} league={league} />
             ))}
+        {searchLeague.length > 0
+          ? filteredCountries.map((league) => (
+              <LeagueCard key={league.id} league={league} />
+            ))
+          : leagues.map((league) => (
+              <LeagueCard key={league.id} league={league} />
+            ))}
+        {searchLeague.length > 0
+          ? filteredCountries.map((league) => (
+              <LeagueCard key={league.id} league={league} />
+            ))
+          : leagues.map((league) => (
+              <LeagueCard key={league.id} league={league} />
+            ))}
       </LeaguesWrapper>
     </ChooseLeagueContainer>
   );

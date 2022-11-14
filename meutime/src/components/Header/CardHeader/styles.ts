@@ -4,7 +4,7 @@ export const CardHeaderContainer = styled.div`
   height: 9rem;
 
   @media (min-width: 700px) {
-    height: 12rem;
+    height: 15rem;
   }
 `;
 
@@ -14,7 +14,7 @@ export const ButtonCard = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top: 2rem;
   gap: 0.5rem;
 
   border-radius: 6px;
@@ -23,6 +23,12 @@ export const ButtonCard = styled.button`
   color: ${(props) => props.theme.white};
 
   transition: transform 0.2s;
+
+  @media (min-width: 700px) {
+    width: 10rem;
+    justify-content: flex-start;
+    padding-top: 2rem;
+  }
 
   &:disabled {
     cursor: default;
@@ -44,6 +50,7 @@ export const ButtonCard = styled.button`
   }
 
   strong {
+    height: 50%;
     font-size: 0.75rem;
 
     @media (min-width: 700px) {
@@ -54,11 +61,9 @@ export const ButtonCard = styled.button`
   div {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     img {
-      /* width: 6rem; // Deixar essa medida em telas maiores */
-      margin-top: 1rem;
       width: 2rem;
       overflow: hidden;
       border-radius: 6px;
@@ -69,6 +74,7 @@ export const ButtonCard = styled.button`
     }
 
     strong {
+      margin-top: -1rem;
       font-size: 1.5rem;
     }
   }

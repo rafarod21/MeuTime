@@ -4,12 +4,33 @@ export const InformationsTeamContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
 
   padding-bottom: 2rem;
 
-  > hr {
-    width: 50%;
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: flex-start;
+    justify-self: center;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    &:last-child {
+      margin-top: 2rem;
+
+      @media (min-width: 1200px) {
+        margin-top: 0;
+      }
+    }
+
+    > hr {
+      width: 50%;
+    }
   }
 
   h2 {
@@ -24,15 +45,14 @@ export const InfoPlayers = styled.div`
   gap: 2rem;
 
   > div {
-    max-width: 700px;
     display: flex;
     grid-gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+  }
 
-    @media (min-width: 700px) {
-      grid-template-columns: 1fr 1fr;
-    }
+  @media (min-width: 1200px) {
+    max-width: 950px;
   }
 `;
 

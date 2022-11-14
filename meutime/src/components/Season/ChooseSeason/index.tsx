@@ -38,6 +38,20 @@ export function ChooseSeason() {
           : seasons.map((season) => (
               <SeasonCard key={season} season={season} />
             ))}
+        {searchSeason.length > 0
+          ? filteredCountries.map((season) => (
+              <SeasonCard key={season} season={season} />
+            ))
+          : seasons.map((season) => (
+              <SeasonCard key={season} season={season} />
+            ))}
+        {searchSeason.length > 0
+          ? filteredCountries.map((season) => (
+              <SeasonCard key={season} season={season} />
+            ))
+          : seasons.map((season) => (
+              <SeasonCard key={season} season={season} />
+            ))}
       </SeasonsWrapper>
     </ChooseSeasonContainer>
   );

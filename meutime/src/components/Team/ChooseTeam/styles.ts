@@ -11,8 +11,9 @@ export const ChooseTeamContainer = styled.section`
 
 export const TeamsWrapper = styled.div`
   margin-top: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
   gap: 1rem;
 `;

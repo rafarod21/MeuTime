@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const ButtonSeasonCardContainer = styled.button`
+  width: 5rem;
+  height: 3rem;
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -21,6 +23,10 @@ export const ButtonSeasonCardContainer = styled.button`
 
   &:active {
     transform: scale(1);
+  }
+
+  @media (min-width: 768px) {
+    width: 9rem;
   }
 
   span {
