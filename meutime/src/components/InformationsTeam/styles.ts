@@ -11,6 +11,10 @@ export const InformationsTeamContainer = styled.div`
   > hr {
     width: 50%;
   }
+
+  h2 {
+    text-align: center;
+  }
 `;
 
 export const InfoPlayers = styled.div`
