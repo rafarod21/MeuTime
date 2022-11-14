@@ -251,5 +251,27 @@
       "formation": "4-3-1-2",
       "played": 1
     }
-  ]
+  ],
+  "fixtures": {
+    "played": {
+      "home": 19,
+      "away": 19,
+      "total": 38
+    },
+    "wins": {
+      "home": 10,
+      "away": 8,
+      "total": 18
+    },
+    "draws": {
+      "home": 7,
+      "away": 5,
+      "total": 12
+    },
+    "loses": {
+      "home": 2,
+      "away": 6,
+      "total": 8
+    }
+  }
 }

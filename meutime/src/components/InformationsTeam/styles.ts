@@ -67,3 +67,41 @@ export const FootballField = styled.div`
     color: ${(props) => props.theme['blue-500']};
   }
 `;
+
+export const ResultGames = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  > div {
+    border: 2px solid ${(props) => props.theme['blue-500']};
+    border-radius: 6px;
+    padding: 0.5rem;
+
+    table {
+      th,
+      td {
+        text-align: center;
+        padding: 0.5rem;
+      }
+
+      th:nth-of-type(1),
+      td:nth-of-type(1) {
+        text-align: start;
+        width: 5rem;
+      }
+
+      th:nth-of-type(3) {
+        width: 5rem;
+      }
+    }
+  }
+`;
+
+export const GoalsScore = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+`;
