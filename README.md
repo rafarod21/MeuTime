@@ -1,9 +1,7 @@
 <!-- -->
 <p align="center">
   <br>
-  <!-- 
-    <Img src="https://github.com/rafarod21/NLW-eSports/blob/main/git-assets/logo-nlw-esports.svg" />    
-  -->
+    <Img src="https://github.com/rafarod21/MeuTime/blob/main/git-assets/logo.svg" />    
   <h3 align="center"> Vamos jogar? :soccer: </h3>
   
   <p align="center">
@@ -61,6 +59,10 @@ Nele é possível vizualizar alguns dados de times de futebol de todo o planeta 
 </h3>
 <p align="center">
   <Img src="https://github.com/rafarod21/MeuTime/blob/main/git-assets/pageLogin.jpeg" width=400>
+  <Img src="https://github.com/rafarod21/MeuTime/blob/main/git-assets/chooseCountry.jpeg" width=400>
+  <Img src="https://github.com/rafarod21/MeuTime/blob/main/git-assets/chooseLeague.jpeg" width=400>
+  <Img src="https://github.com/rafarod21/MeuTime/blob/main/git-assets/chooseSeason.jpeg" width=400>
+  <Img src="https://github.com/rafarod21/MeuTime/blob/main/git-assets/ChooseTeam.jpeg" width=400>
   <Img src="https://github.com/rafarod21/MeuTime/blob/main/git-assets/detailsTeam1.jpeg" width=400>
   <Img src="https://github.com/rafarod21/MeuTime/blob/main/git-assets/detailsTeam2.jpeg" width=400>
 </p>
