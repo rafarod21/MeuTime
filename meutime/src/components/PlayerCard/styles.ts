@@ -11,6 +11,7 @@ export const PlayerCardContainer = styled.div`
   align-items: center;
 
   img {
+    max-width: 6rem;
     overflow: hidden;
     border-radius: 6px;
   }

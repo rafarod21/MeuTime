@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 import { redirect, useLocation, useNavigate } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
 
+import { Country } from '../../@types/Country';
+
 import logoImg from '../../assets/logo.svg';
 import { FootballContext } from '../../contexts/FootballContext';
 
@@ -29,7 +31,7 @@ export function Login() {
       if (countries.response.length === 0) {
         alert('Insira uma key válida!');
       } else {
-        setListCountries(countries.response);
+        setListCountries(countries.response as Country[]);
 
         // SALVAR KEY EM SESSIONSTORE
         window.sessionStorage.setItem('@meutime:key', key);
@@ -47,7 +49,7 @@ export function Login() {
     if (inputKeyApi.trim().length < 3) {
       alert('Insira uma key válida!');
     } else {
-      apiFootball.defaults.headers.common['x-rapidapi-key'] =
+      apiFootball.defaults.headers.common['X-RapidAPI-Key'] =
         inputKeyApi.trim();
       const isKeyValid = await handleValidateKey(inputKeyApi.trim());
 
@@ -73,7 +75,7 @@ export function Login() {
     }
 
     if (keyApiFootball) {
-      apiFootball.defaults.headers.common['x-rapidapi-key'] = keyApiFootball;
+      apiFootball.defaults.headers.common['X-RapidAPI-Key'] = keyApiFootball;
       if (listCountries === null) {
         validateKey(keyApiFootball);
       }

@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { Search } from '../../Search';
 import { TeamCard } from '../TeamCard';
 
 import { Team } from '../../../@types/Team';
 
+import { FootballContext } from '../../../contexts/FootballContext';
+
+import { apiFootball } from '../../../lib/apiFootball';
+
 import { TeamsWrapper, ChooseTeamContainer } from './styles';
 
-import dataFake from '../../../../data.json';
-
 export function ChooseTeam() {
+  const { league, season } = useContext(FootballContext);
   const [teams, setTeams] = useState<Team[]>([]);
   const [searchTeam, setSearchTeam] = useState('');
 
@@ -23,7 +26,31 @@ export function ChooseTeam() {
       : [];
 
   useEffect(() => {
-    setTeams(dataFake.teams);
+    async function getTeamsByLeagueAndSeason() {
+      if (league) {
+        try {
+          const { data } = await apiFootball.get('/teams', {
+            params: {
+              league: league.league.id,
+              season,
+            },
+          });
+
+          if (data.response.length > 0) {
+            const teamResponse: Team[] = data.response.map(
+              (value: { team: Team }) => value.team
+            );
+            setTeams(teamResponse);
+          } else {
+            console.log(data);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    }
+
+    getTeamsByLeagueAndSeason();
   }, []);
 
   return (
@@ -35,16 +62,6 @@ export function ChooseTeam() {
       />
 
       <TeamsWrapper>
-        {searchTeam.length > 0
-          ? filteredCountries.map((team) => (
-              <TeamCard key={team.id} team={team} />
-            ))
-          : teams.map((team) => <TeamCard key={team.id} team={team} />)}
-        {searchTeam.length > 0
-          ? filteredCountries.map((team) => (
-              <TeamCard key={team.id} team={team} />
-            ))
-          : teams.map((team) => <TeamCard key={team.id} team={team} />)}
         {searchTeam.length > 0
           ? filteredCountries.map((team) => (
               <TeamCard key={team.id} team={team} />

@@ -15,7 +15,7 @@ export function TeamCard({ team }: TeamCardProps) {
 
   function handleChooseTeam(team: Team) {
     setTeam(team);
-    handleChoicePhase('season');
+    handleChoicePhase('finish');
   }
 
   return (

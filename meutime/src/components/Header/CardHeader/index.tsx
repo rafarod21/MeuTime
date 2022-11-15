@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { League } from '../../../@types/League';
 
 import { FootballContext } from '../../../contexts/FootballContext';
 import { translateCountryNameForCode } from '../../../utils/translateCountryName';
@@ -11,18 +10,8 @@ interface CardHeaderProps {
 }
 
 export function CardHeader({ type }: CardHeaderProps) {
-  const {
-    choicePhase,
-    country,
-    league,
-    team,
-    season,
-    handleChoicePhase,
-    setCountry,
-    setLeague,
-    setTeam,
-    setSeason,
-  } = useContext(FootballContext);
+  const { choicePhase, country, league, team, season, handleChoicePhase } =
+    useContext(FootballContext);
 
   return (
     <CardHeaderContainer>
@@ -59,33 +48,9 @@ export function CardHeader({ type }: CardHeaderProps) {
               disabled={choicePhase === 'country'}
             >
               <div>
-                <img src={league.logo} alt={league.name} />
+                <img src={league.league.logo} alt={league.league.name} />
               </div>
-              <strong>{league.name}</strong>
-            </ButtonCard>
-          )}
-        </>
-      )}
-      {type === 'team' && (
-        <>
-          <span>Time</span>
-          {team === null ? (
-            <ButtonCard disabled>
-              <span>
-                {choicePhase === 'country' && 'Escolha um país antes'}
-                {choicePhase === 'league' && 'Escolha uma liga antes'}
-                {choicePhase === 'team' && 'Escolha um time'}
-              </span>
-            </ButtonCard>
-          ) : (
-            <ButtonCard
-              onClick={() => handleChoicePhase('team')}
-              disabled={choicePhase === 'country' || choicePhase === 'league'}
-            >
-              <div>
-                <img src={team.logo} alt={team.name} />
-              </div>
-              <strong>{team.name}</strong>
+              <strong>{league.league.name}</strong>
             </ButtonCard>
           )}
         </>
@@ -98,22 +63,46 @@ export function CardHeader({ type }: CardHeaderProps) {
               <span>
                 {choicePhase === 'country' && 'Escolha um país antes'}
                 {choicePhase === 'league' && 'Escolha uma liga antes'}
-                {choicePhase === 'team' && 'Escolha um time antes'}
                 {choicePhase === 'season' && 'Escolha uma temporada'}
               </span>
             </ButtonCard>
           ) : (
             <ButtonCard
               onClick={() => handleChoicePhase('season')}
-              disabled={
-                choicePhase === 'country' ||
-                choicePhase === 'league' ||
-                choicePhase === 'team'
-              }
+              disabled={choicePhase === 'country' || choicePhase === 'league'}
             >
               <div>
                 <strong>{season}</strong>
               </div>
+            </ButtonCard>
+          )}
+        </>
+      )}
+      {type === 'team' && (
+        <>
+          <span>Time</span>
+          {team === null ? (
+            <ButtonCard disabled>
+              <span>
+                {choicePhase === 'country' && 'Escolha um país antes'}
+                {choicePhase === 'league' && 'Escolha uma liga antes'}
+                {choicePhase === 'season' && 'Escolha uma temporada antes'}
+                {choicePhase === 'team' && 'Escolha um time'}
+              </span>
+            </ButtonCard>
+          ) : (
+            <ButtonCard
+              onClick={() => handleChoicePhase('team')}
+              disabled={
+                choicePhase === 'country' ||
+                choicePhase === 'league' ||
+                choicePhase === 'season'
+              }
+            >
+              <div>
+                <img src={team.logo} alt={team.name} />
+              </div>
+              <strong>{team.name}</strong>
             </ButtonCard>
           )}
         </>

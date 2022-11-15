@@ -13,7 +13,7 @@ export function SeasonCard({ season }: SeasonCardProps) {
 
   function handleChooseSeason(season: number) {
     setSeason(season);
-    handleChoicePhase('finish');
+    handleChoicePhase('team');
   }
 
   return (

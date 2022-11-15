@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const InformationsTeamContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +10,7 @@ export const InformationsTeamContainer = styled.div`
 
   @media (min-width: 1200px) {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: flex-start;
     justify-self: center;
   }

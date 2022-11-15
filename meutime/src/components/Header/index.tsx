@@ -12,8 +12,8 @@ export function Header() {
       <ShowChoices>
         <CardHeader type='country' />
         <CardHeader type='league' />
-        <CardHeader type='team' />
         <CardHeader type='season' />
+        <CardHeader type='team' />
       </ShowChoices>
     </HeaderContainer>
   );

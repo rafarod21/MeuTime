@@ -29,7 +29,7 @@ export const ShowChoices = styled.div`
     align-items: center;
   }
 
-  > div:last-child {
+  > div:nth-child(3) {
     div {
       height: 100%;
       display: flex;

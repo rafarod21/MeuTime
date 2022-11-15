@@ -5,8 +5,5 @@ export interface Player {
   lastname: string;
   age: number;
   nationality: string;
-  height: string;
-  weight: string;
-  injured: boolean;
   photo: string;
 }

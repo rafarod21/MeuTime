@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ButtonCountryCardContainer = styled.button`
   width: 5rem;
-  height: 7rem;
+  height: 8rem;
   background: transparent;
   display: flex;
   flex-direction: column;

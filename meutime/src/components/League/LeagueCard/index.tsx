@@ -15,15 +15,15 @@ export function LeagueCard({ league }: LeagueCardProps) {
 
   function handleChooseLeague(league: League) {
     setLeague(league);
-    handleChoicePhase('team');
+    handleChoicePhase('season');
   }
 
   return (
     <ButtonLeagueCardContainer onClick={() => handleChooseLeague(league)}>
       <div>
-        <img src={league.logo} alt={league.name} />
+        <img src={league.league.logo} alt={league.league.name} />
       </div>
-      <strong>{league.name}</strong>
+      <strong>{league.league.name}</strong>
     </ButtonLeagueCardContainer>
   );
 }

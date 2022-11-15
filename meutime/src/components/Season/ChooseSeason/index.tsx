@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { Search } from '../../Search';
 import { SeasonCard } from '../SeasonCard';
 
+import { FootballContext } from '../../../contexts/FootballContext';
+
 import { SeasonsWrapper, ChooseSeasonContainer } from './styles';
 
-import dataFake from '../../../../data.json';
-
 export function ChooseSeason() {
+  const { league } = useContext(FootballContext);
   const [seasons, setSeasons] = useState<number[]>([]);
   const [searchSeason, setSearchSeason] = useState('');
 
@@ -19,7 +20,9 @@ export function ChooseSeason() {
       : [];
 
   useEffect(() => {
-    setSeasons(dataFake.seasons);
+    if (league) {
+      setSeasons(league.seasons.map((season) => season.year));
+    }
   }, []);
 
   return (
@@ -31,20 +34,6 @@ export function ChooseSeason() {
       />
 
       <SeasonsWrapper>
-        {searchSeason.length > 0
-          ? filteredCountries.map((season) => (
-              <SeasonCard key={season} season={season} />
-            ))
-          : seasons.map((season) => (
-              <SeasonCard key={season} season={season} />
-            ))}
-        {searchSeason.length > 0
-          ? filteredCountries.map((season) => (
-              <SeasonCard key={season} season={season} />
-            ))
-          : seasons.map((season) => (
-              <SeasonCard key={season} season={season} />
-            ))}
         {searchSeason.length > 0
           ? filteredCountries.map((season) => (
               <SeasonCard key={season} season={season} />

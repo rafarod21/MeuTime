@@ -33,7 +33,7 @@ export function Home() {
     if ('message' in countries) return 'Server error';
 
     if (countries.response.length > 0) {
-      setListCountries(countries.response);
+      setListCountries(countries.response as Country[]);
 
       // SALVAR KEY EM SESSIONSTORE
       window.sessionStorage.setItem('@meutime:key', key);
@@ -60,7 +60,7 @@ export function Home() {
     }
 
     if (key) {
-      apiFootball.defaults.headers.common['x-rapidapi-key'] = key;
+      apiFootball.defaults.headers.common['X-RapidAPI-Key'] = key;
       validateKey(key);
     }
   }, []);

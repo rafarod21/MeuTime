@@ -9,11 +9,12 @@ export const CardHeaderContainer = styled.div`
 `;
 
 export const ButtonCard = styled.button`
-  height: 100%;
+  /* height: 100%; */
   background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: flex-end; */
   padding-top: 2rem;
   gap: 0.5rem;
 

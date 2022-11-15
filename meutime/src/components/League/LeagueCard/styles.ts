@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const ButtonLeagueCardContainer = styled.button`
-  width: 5rem;
-  height: 10rem;
+  width: 6rem;
+  /* height: 15rem; */
   background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
 
   border-radius: 6px;
@@ -34,6 +35,7 @@ export const ButtonLeagueCardContainer = styled.button`
   }
 
   strong {
+    height: 4rem;
     font-size: 0.875rem;
 
     @media (min-width: 700px) {
