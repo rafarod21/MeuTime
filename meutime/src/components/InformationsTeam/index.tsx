@@ -121,6 +121,8 @@ export function InformationsTeam() {
 
   return (
     <InformationsTeamContainer>
+      {!players && <h1>NÁO HÁ JOGADORES PARA OS DADOS INFORMADOS</h1>}
+      {!teamStatistics && <h1>NÁO HÁ ESTATÍSTICAS PARA OS DADOS INFORMADOS</h1>}
       {teamStatistics && players && (
         <>
           <div>
